@@ -91,11 +91,12 @@ func V3EndpointURL(catalog *tokens3.ServiceCatalog, opts golangsdk.EndpointOpts)
 			}
 		}
 	}
-
+	
+	//Validation disabled for workarround! BIV
 	// Report an error if the options were ambiguous.
-	if len(endpoints) > 1 {
-		return "", ErrMultipleMatchingEndpointsV3{Endpoints: endpoints}
-	}
+	//if len(endpoints) > 1 {
+	//	return "", ErrMultipleMatchingEndpointsV3{Endpoints: endpoints}
+	//}
 
 	// Extract the URL from the matching Endpoint.
 	for _, endpoint := range endpoints {
